@@ -1,0 +1,11 @@
+server:
+  port: 8080
+resilience4j:
+  ratelimiter:
+    instances:
+        backendA:
+            limitForPeriod: 2
+            limitRefreshPeriod: 10s
+            timeoutDuration: 10s
+            register-health-indicator: true
+            event-consumer-buffer-size: 10
